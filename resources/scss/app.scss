@@ -1,1 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
+
+.my_nav {
+    .navbar-brand {
+      .logo {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
