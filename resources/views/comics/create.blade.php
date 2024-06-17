@@ -2,39 +2,41 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-4">Aggiungi un nuovo fumetto</h1>
-    <form action="{{ route('comics.store') }}" method="POST">
-        @csrf
+    <div class="container">
+        <h1 class="mb-4">Aggiungi un nuovo fumetto</h1>
+        <form action="{{ route('comics.store') }}" method="POST">
+            @csrf
+            <div class="mb-4 mt-4">
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" name="title" id="title" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="title">Titolo</label>
-            <input type="text" name="title" id="title" class="form-control">
-        </div>
+            <div class="mb-4 mt-4">
+                <label for="description" class="form-label">Descrizione</label>
+                <textarea name="description" id="description" class="form-control" rows="3" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label for="description">Descrizione</label>
-            <textarea name="description" id="description" class="form-control" rows="3" ></textarea>
-        </div>
+            <div class="mb-4 mt-4">
+                <label for="type" class="form-label">Tipo</label>
+                <input type="text" name="type" id="type" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="type">Tipo</label>
-            <input type="text" name="type" id="type" class="form-control">
-        </div>
+            <div class="mb-4 mt-4">
+                <label for="price" class="form-label">Prezzo</label>
+                <input type="number" step="0.01" name="price" id="price" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="price">Prezzo</label>
-            <input type="text" name="price" id="price" class="form-control">
-        </div>
+            <div class="mb-4 mt-4">
+                <label for="sale_date" class="form-label">Data di uscita</label>
+                <input type="date" name="sale_date" id="sale_date" class="form-control" required>
+            </div>
 
-        <div class="form-group">
-            <label for="sale_date">Data di uscita</label>
-            <input type="text" name="sale_date" id="sale_date" class="form-control">
-        </div>
+            <div class="mb-4 mt-4">
+                <label for="image" class="form-label">Immagine</label>
+                <input type="url" class="form-control" id="image" name="image" required>
+            </div>
 
-        <div class="form-group">
-            <label for="image" class="form-label">Image</label>
-            <input type="text" class="form-control" id="image" name="image">
-        </div>
-        <button type="submit" class="btn btn-primary">Crea</button>
-    </form>
+            <button type="submit" class="btn btn-primary mb-4 mt-4">Crea</button>
+        </form>
+    </div>
 @endsection

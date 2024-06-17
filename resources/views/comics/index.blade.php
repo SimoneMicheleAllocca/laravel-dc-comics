@@ -28,7 +28,7 @@
                         <td>${{ $comic->price }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>{{ $comic->sale_date }}</td>
-                        <td class="d-flex gap-2">
+                        <td class="d-flex justify-content-center gap-2">
                             <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="btn btn-info btn-sm">Info</a>
                             <a href="{{ route('comics.edit', ['comic' => $comic->id]) }}" class="btn btn-warning btn-sm">Update</a>
                             <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST" style="display:inline;">
@@ -43,5 +43,7 @@
         </table>
     </div>
 @endsection
+
+
 
 
